@@ -1,0 +1,1881 @@
+/* ==========================================================
+   STYLE.CSS — PARTIE 1
+   BASE + FOND VIOLET
+========================================================== */
+
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(168, 85, 247, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(126, 34, 206, 0.3),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #180027,
+            #2b0750,
+            #3b0a63,
+            #170021
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ==========================
+   APPLICATION
+========================== */
+
+#app {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    z-index: 5;
+}
+
+
+/* ==========================
+   ÉCRANS
+========================== */
+
+.screen {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+.screen.active {
+    display: flex;
+}
+
+
+/* ==========================
+   ÉCRAN CACHÉ
+========================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================
+   SÉLECTION DU TEXTE
+========================== */
+
+::selection {
+    background: rgba(255, 105, 180, 0.5);
+    color: #ffffff;
+}
+
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #190025;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: rgba(216, 180, 254, 0.5);
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(216, 180, 254, 0.8);
+}/* ==========================================================
+   STYLE.CSS — PARTIE 2
+   CARTES + TYPOGRAPHIE
+========================================================== */
+
+
+/* ==========================
+   CARTE PRINCIPALE
+========================== */
+
+.card {
+    position: relative;
+
+    width: min(92vw, 720px);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    overflow: hidden;
+}
+
+
+/* ==========================
+   PETIT REFLET DE LA CARTE
+========================== */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    left: -100px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(216, 180, 254, 0.12);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* ==========================
+   TITRES
+========================== */
+
+h1,
+h2,
+h3 {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 20px;
+
+    line-height: 1.2;
+}
+
+
+h1 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2.5rem, 8vw, 5rem);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 4px 25px rgba(236, 72, 153, 0.35);
+}
+
+
+h2 {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2rem, 6vw, 3.5rem);
+
+    font-weight: 700;
+}
+
+
+h3 {
+    font-size: 1.35rem;
+
+    font-weight: 600;
+}
+
+
+/* ==========================
+   TEXTES
+========================== */
+
+p {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 18px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   ICÔNES DE SECTION
+========================== */
+
+.sectionIcon {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 15px;
+
+    font-size: 3.5rem;
+
+    filter:
+        drop-shadow(
+            0 8px 20px rgba(255, 105, 180, 0.3)
+        );
+}
+
+
+/* ==========================
+   CŒUR D'ACCUEIL
+========================== */
+
+.heartIcon {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    font-size: 4rem;
+
+    animation: softPulse 2s ease-in-out infinite;
+}
+
+
+/* ==========================
+   ANIMATION CŒUR
+========================== */
+
+@keyframes softPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}/* ==========================================================
+   STYLE.CSS — PARTIE 3
+   BOUTONS + INTERACTIONS
+========================================================== */
+
+
+/* ==========================
+   BOUTONS
+========================== */
+
+button {
+    position: relative;
+
+    z-index: 2;
+
+    border: none;
+
+    padding: 14px 26px;
+
+    margin-top: 15px;
+
+    border-radius: 999px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a855f7,
+            #ec4899
+        );
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(168, 85, 247, 0.28);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* ==========================
+   HOVER
+========================== */
+
+button:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 15px 35px rgba(236, 72, 153, 0.35);
+}
+
+
+/* ==========================
+   CLIC
+========================== */
+
+button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+
+/* ==========================
+   FOCUS
+========================== */
+
+button:focus-visible {
+    outline: 2px solid #f5d0fe;
+
+    outline-offset: 4px;
+}
+
+
+/* ==========================
+   BOUTONS DE CONTINUATION
+========================== */
+
+.nextButton {
+    margin-top: 28px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(10px);
+}
+
+
+/*
+   Le JavaScript ajoutera cette classe
+   lorsque l'étape précédente est terminée.
+*/
+
+.nextButton.ready {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* ==========================
+   BOUTON PRINCIPAL
+========================== */
+
+#startButton {
+    margin-top: 25px;
+
+    padding: 16px 32px;
+
+    font-size: 1rem;
+}
+
+
+/* ==========================
+   BOUTON RECOMMENCER
+========================== */
+
+#restartButton {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #c026d3
+        );
+}
+
+
+/* ==========================
+   PETIT EFFET LUMINEUX
+========================== */
+
+button::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.22),
+            transparent 70%
+        );
+
+    transform: translateX(-120%);
+
+    transition: transform 0.6s ease;
+
+    pointer-events: none;
+}
+
+
+button:hover::after {
+    transform: translateX(120%);
+}/* ==========================================================
+   STYLE.CSS — PARTIE 4
+   ENVELOPPE 💌 + CADEAU 🎁
+========================================================== */
+
+
+/* ==========================
+   ENVELOPPE
+========================== */
+
+.envelope {
+    position: relative;
+
+    width: 150px;
+    height: 110px;
+
+    margin: 30px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 4.5rem;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(
+            0 15px 25px rgba(236, 72, 153, 0.3)
+        );
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+.envelope:hover {
+    transform: scale(1.08) rotate(-2deg);
+
+    filter:
+        drop-shadow(
+            0 20px 35px rgba(236, 72, 153, 0.45)
+        );
+}
+
+
+/* ==========================
+   INDICATION LETTRE
+========================== */
+
+#letterHint {
+    min-height: 30px;
+
+    font-size: 0.9rem;
+
+    opacity: 0.75;
+}
+
+
+/* ==========================
+   CONTENU LETTRE
+========================== */
+
+.letterContent {
+    max-width: 580px;
+
+    margin: 25px auto 0;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        visibility 0.6s ease;
+}
+
+
+.letterContent.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================
+   CADEAU
+========================== */
+
+.giftButton {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 150px;
+
+    margin: 35px auto;
+
+    padding: 0;
+
+    font-size: 5rem;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+.giftButton:hover {
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    transform:
+        translateY(-5px)
+        rotate(-3deg)
+        scale(1.05);
+}
+
+
+/* ==========================
+   CONTENU DU CADEAU
+========================== */
+
+.giftContent {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(236, 72, 153, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(0.9)
+        translateY(20px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        visibility 0.6s ease;
+}
+
+
+.giftContent.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/* ==========================
+   CŒUR DU CADEAU
+========================== */
+
+.giftEmoji {
+    margin-bottom: 10px;
+
+    font-size: 4rem;
+
+    animation:
+        softPulse 1.8s ease-in-out infinite;
+}/* ==========================================================
+   STYLE.CSS — PARTIE 5
+   JAUGE D'AMOUR ❤️
+========================================================== */
+
+
+/* ==========================
+   EMOJI
+========================== */
+
+.loveEmoji {
+    margin: 25px 0 10px;
+
+    font-size: clamp(3rem, 12vw, 5rem);
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 10px 25px rgba(236, 72, 153, 0.3)
+        );
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ==========================
+   VALEUR
+========================== */
+
+.loveValue {
+    margin: 10px 0 20px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(2.5rem, 8vw, 4rem);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 5px 25px rgba(236, 72, 153, 0.35);
+}
+
+
+/* ==========================
+   BARRE
+========================== */
+
+.loveBar {
+    position: relative;
+
+    width: min(100%, 560px);
+
+    height: 18px;
+
+    margin: 25px auto;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================
+   PROGRESSION
+========================== */
+
+.loveProgress {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #c026d3,
+            #ec4899,
+            #f9a8d4
+        );
+
+    box-shadow:
+        0 0 20px rgba(236, 72, 153, 0.5);
+
+    transition:
+        width 0.25s ease;
+}
+
+
+/* ==========================
+   SLIDER
+========================== */
+
+.loveSlider {
+    width: min(100%, 560px);
+
+    margin: 15px auto 20px;
+
+    display: block;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    height: 7px;
+
+    border-radius: 999px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* ==========================
+   SLIDER — CHROME / SAFARI
+========================== */
+
+.loveSlider::-webkit-slider-thumb {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    border: 3px solid #ffffff;
+
+    background: #ec4899;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(236, 72, 153, 0.55);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.loveSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+
+/* ==========================
+   SLIDER — FIREFOX
+========================== */
+
+.loveSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    border: 3px solid #ffffff;
+
+    background: #ec4899;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(236, 72, 153, 0.55);
+}
+
+
+/* ==========================
+   MESSAGE JAUGE
+========================== */
+
+.loveMessage {
+    min-height: 55px;
+
+    margin: 10px auto;
+
+    font-size: 0.95rem;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+}
+
+
+/* ==========================
+   RÉSULTAT
+========================== */
+
+.resultEmoji {
+    margin: 20px 0;
+
+    font-size: clamp(4rem, 15vw, 7rem);
+
+    animation:
+        softPulse 1.5s ease-in-out infinite;
+}
+
+
+.resultValue {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 10vw, 5rem);
+
+    font-weight: 700;
+
+    color: #f9a8d4;
+
+    text-shadow:
+        0 0 30px rgba(236, 72, 153, 0.45);
+}
+
+
+.resultText {
+    max-width: 580px;
+
+    margin-left: auto;
+    margin-right: auto;
+}/* ==========================================================
+   STYLE.CSS — PARTIE 6
+   SOUVENIRS 📸 + CARTES
+========================================================== */
+
+
+/* ==========================
+   GRILLE DES SOUVENIRS
+========================== */
+
+.memoriesGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+
+    margin: 30px 0;
+}
+
+
+/* ==========================
+   CARTE SOUVENIR
+========================== */
+
+.memoryCard {
+    padding: 24px 18px;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ==========================
+   SURVOL CARTE
+========================== */
+
+.memoryCard:hover {
+    transform:
+        translateY(-8px);
+
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================
+   ICÔNE SOUVENIR
+========================== */
+
+.memoryIcon {
+    margin-bottom: 15px;
+
+    font-size: 3.2rem;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.memoryCard:hover .memoryIcon {
+    transform:
+        scale(1.15)
+        rotate(4deg);
+}
+
+
+/* ==========================
+   TEXTE CARTE
+========================== */
+
+.memoryCard p {
+    margin-bottom: 0;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================
+   MESSAGE SPÉCIAL
+========================== */
+
+.specialCard {
+    overflow: visible;
+}
+
+
+.namesAnimation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin: 30px 0;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(2.5rem, 9vw, 5rem);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 8px 30px rgba(236, 72, 153, 0.35);
+}
+
+
+.nameHeart {
+    display: inline-block;
+
+    animation:
+        softPulse 1.5s ease-in-out infinite;
+}
+
+
+.specialText {
+    max-width: 580px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/* ==========================
+   MESSAGE FINAL
+========================== */
+
+.finalCard {
+    max-width: 760px;
+}
+
+
+.finalLetter {
+    max-width: 600px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.finalLetter p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================
+   SIGNATURE
+========================== */
+
+.signature {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin: 30px 0 10px;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size: 1.5rem;
+}
+
+
+.signature strong {
+    font-size: 2.3rem;
+
+    color: #f9a8d4;
+}
+
+
+/* ==========================
+   ÉCRAN FINAL
+========================== */
+
+.endingCard {
+    max-width: 700px;
+}
+
+
+.endingIcon {
+    font-size: 5rem;
+
+    margin-bottom: 15px;
+
+    animation:
+        softPulse 1.8s ease-in-out infinite;
+}
+
+
+.endingNames {
+    margin: 25px 0;
+
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(2.2rem, 8vw, 4rem);
+
+    font-weight: 700;
+
+    color: #f9a8d4;
+}/* ==========================================================
+   STYLE.CSS — PARTIE 7
+   FOND ANIMÉ ✨ + CŒURS ❤️ + FLEURS 🌸
+========================================================== */
+
+
+/* ==========================
+   CONTENEURS DÉCORATIFS
+========================== */
+
+#stars,
+#hearts,
+#flowers {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+#stars {
+    z-index: 0;
+}
+
+
+#hearts {
+    z-index: 1;
+}
+
+
+#flowers {
+    z-index: 1;
+}
+
+
+/* ==========================
+   ÉTOILES
+========================== */
+
+.star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    opacity: 0.5;
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==========================
+   CŒURS FLOTTANTS
+========================== */
+
+.floatingHeart {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    opacity: 0.5;
+
+    filter:
+        drop-shadow(
+            0 5px 12px rgba(236, 72, 153, 0.35)
+        );
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* ==========================
+   FLEURS FLOTTANTES
+========================== */
+
+.floatingFlower {
+    position: absolute;
+
+    bottom: -60px;
+
+    font-size: 24px;
+
+    opacity: 0.4;
+
+    filter:
+        drop-shadow(
+            0 5px 12px rgba(216, 180, 254, 0.3)
+        );
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* ==========================
+   PETITES ÉTINCELLES
+========================== */
+
+.sparkle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #f5d0fe;
+
+    box-shadow:
+        0 0 10px #f5d0fe;
+
+    pointer-events: none;
+}
+
+
+/* ==========================
+   EFFET LUMINEUX SUR L'ACCUEIL
+========================== */
+
+#welcome::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(168, 85, 247, 0.12);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+
+/* ==========================
+   MEDIA MP4 INVISIBLE
+========================== */
+
+.hiddenMedia {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    left: -9999px;
+
+    top: -9999px;
+}
+
+
+/* ==========================
+   CONTRÔLE MUSIQUE 🎵
+========================== */
+
+.musicControl {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(20, 5, 35, 0.55);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+}
+
+
+#musicButton {
+    margin: 0;
+
+    padding: 10px 16px;
+
+    font-size: 0.8rem;
+}/* ==========================================================
+   STYLE.CSS — PARTIE 8
+   RESPONSIVE 📱 + FLUIDITÉ
+========================================================== */
+
+
+/* ==========================
+   TABLETTES
+========================== */
+
+@media (max-width: 800px) {
+
+    .screen {
+        padding: 30px 16px;
+    }
+
+
+    .card {
+        width: min(94vw, 650px);
+
+        padding: 35px 25px;
+
+        border-radius: 26px;
+    }
+
+
+    .memoriesGrid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .memoryCard:last-child {
+        grid-column:
+            1 / -1;
+
+        max-width: 320px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .musicControl {
+        right: 12px;
+
+        bottom: 12px;
+    }
+
+}
+
+
+/* ==========================
+   TÉLÉPHONES
+========================== */
+
+@media (max-width: 560px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+
+    .screen {
+        min-height: 100svh;
+
+        padding:
+            25px 14px 90px;
+    }
+
+
+    .card {
+        width: 100%;
+
+        padding:
+            30px 18px;
+
+        border-radius: 24px;
+    }
+
+
+    h1 {
+        font-size:
+            clamp(2.3rem, 12vw, 3.5rem);
+    }
+
+
+    h2 {
+        font-size:
+            clamp(2rem, 10vw, 3rem);
+    }
+
+
+    p {
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+    }
+
+
+    .sectionIcon {
+        font-size: 3rem;
+    }
+
+
+    .heartIcon {
+        font-size: 3.5rem;
+    }
+
+
+    button {
+        width: 100%;
+
+        max-width: 320px;
+
+        padding: 14px 20px;
+    }
+
+
+    .memoriesGrid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .memoryCard {
+        min-height: 150px;
+    }
+
+
+    .memoryCard:last-child {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+
+    .giftButton {
+        width: 125px;
+        height: 125px;
+
+        font-size: 4rem;
+    }
+
+
+    .envelope {
+        width: 120px;
+        height: 90px;
+
+        font-size: 3.8rem;
+    }
+
+
+    .namesAnimation {
+        font-size:
+            clamp(2.2rem, 12vw, 3.5rem);
+
+        gap: 7px;
+    }
+
+
+    .finalLetter {
+        padding: 20px 16px;
+    }
+
+
+    .signature strong {
+        font-size: 2rem;
+    }
+
+
+    .endingIcon {
+        font-size: 4rem;
+    }
+
+
+    .musicControl {
+        left: 50%;
+
+        right: auto;
+
+        transform:
+            translateX(-50%);
+
+        bottom: 12px;
+    }
+
+
+    #musicButton {
+        width: auto;
+
+        white-space: nowrap;
+    }
+
+}
+
+
+/* ==========================
+   PETITS TÉLÉPHONES
+========================== */
+
+@media (max-width: 380px) {
+
+    .card {
+        padding:
+            25px 14px;
+    }
+
+
+    .loveValue {
+        font-size: 2.8rem;
+    }
+
+
+    .loveEmoji {
+        font-size: 3.5rem;
+    }
+
+
+    .resultEmoji {
+        font-size: 4rem;
+    }
+
+}/* ==========================================================
+   STYLE.CSS — PARTIE 9
+   ANIMATIONS + OPTIMISATIONS ⚡
+========================================================== */
+
+
+/* ==========================
+   APPARITION DES ÉCRANS
+========================== */
+
+.screen.active {
+    animation:
+        screenAppear 0.65s ease both;
+}
+
+
+@keyframes screenAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==========================
+   ANIMATION DOUCE DES CARTES
+========================== */
+
+.card {
+    will-change:
+        transform,
+        opacity;
+}
+
+
+.card:hover {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+
+/* ==========================
+   CŒUR FINAL
+========================== */
+
+.finalHeart {
+    display: inline-block;
+
+    margin: 15px 0;
+
+    font-size:
+        clamp(4rem, 18vw, 8rem);
+
+    filter:
+        drop-shadow(
+            0 15px 30px rgba(236, 72, 153, 0.4)
+        );
+
+    animation:
+        finalHeartbeat 1.4s ease-in-out infinite;
+}
+
+
+@keyframes finalHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* ==========================
+   TRANSITION DE LA JAUGE
+========================== */
+
+.loveProgress,
+.loveEmoji,
+.loveValue {
+    will-change:
+        transform,
+        width;
+}
+
+
+/* ==========================
+   ÉVITER LES SÉLECTIONS
+   SUR LES ÉLÉMENTS INTERACTIFS
+========================== */
+
+.envelope,
+.giftButton,
+.loveEmoji,
+.finalHeart,
+.endingIcon,
+.nameHeart {
+    user-select: none;
+
+    -webkit-user-select: none;
+}
+
+
+/* ==========================
+   RÉDUCTION DES MOUVEMENTS
+   ACCESSIBILITÉ + FLUIDITÉ
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+/* ==========================
+   ÉCRANS TRÈS PETITS
+========================== */
+
+@media (max-height: 650px) {
+
+    .screen {
+        align-items: flex-start;
+
+        padding-top: 25px;
+    }
+
+
+    .card {
+        margin:
+            10px auto 70px;
+    }
+
+}/* ==========================================================
+   STYLE.CSS — PARTIE 10
+   FINITIONS ✨
+========================================================== */
+
+
+/* ==========================
+   ÉTAT DÉSACTIVÉ
+========================== */
+
+button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none !important;
+
+    box-shadow: none;
+}
+
+
+/* ==========================
+   BOUTONS CACHÉS
+========================== */
+
+.nextButton:not(.ready) {
+    visibility: hidden;
+}
+
+
+/* ==========================
+   TRANSITIONS FLUIDES
+========================== */
+
+.screen,
+.card,
+button,
+.memoryCard,
+.giftButton,
+.envelope {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================
+   ÉVITER LES DÉBORDEMENTS
+========================== */
+
+img,
+video {
+    max-width: 100%;
+}
+
+
+/* ==========================
+   TEXTE LONG
+========================== */
+
+.finalLetter,
+.specialText,
+.resultText,
+.memoryCard p {
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
+}
+
+
+/* ==========================
+   FINITION DU FOND
+========================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(217, 70, 239, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(124, 58, 237, 0.08),
+            transparent 30%
+        );
+}
+
+
+/* ==========================
+   FIN
+========================== */
