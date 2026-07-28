@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Joyeux Anniversaire Myra ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Musique -->
+    <audio id="music" loop>
+        <!-- Ajoute ton propre fichier audio ici -->
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Fond animé -->
+    <div id="background"></div>
+
+    <!-- Cœurs -->
+    <div id="hearts"></div>
+
+    <!-- Dahlias -->
+    <div id="flowers"></div>
+
+    <!-- Feux d'artifice -->
+    <canvas id="fireworks"></canvas>
+
+    <!-- Écran d'accueil -->
+    <section id="welcome">
+
+        <h1>
+            ❤️ Joyeux Anniversaire ❤️
+        </h1>
+
+        <h2>Myra 🌸</h2>
+
+        <p>
+
+            Aujourd'hui est une journée vraiment spéciale...
+
+            Parce que c'est l'anniversaire d'une personne qui compte énormément pour moi.
+
+            Ce petit site a été créé avec tout mon cœur.
+
+        </p>
+
+        <button id="startButton">
+            Ouvrir mon cadeau ❤️
+        </button>
+
+    </section>
+
+    <!-- Livre -->
+    <main id="book" class="hidden">
+
+        <!-- Page 1 -->
+        <section class="page active">
+
+            <h2>Avant de commencer...</h2>
+
+            <p>
+
+                Ce n'est pas simplement un site.
+
+                C'est un morceau de mon cœur.
+
+                Chaque mot, chaque animation et chaque couleur ont été pensés pour toi.
+
+            </p>
+
+            <button class="next">
+                Continuer ❤️
+            </button>
+
+        </section>
+
+        <!-- Jauge -->
+        <section class="page">
+
+            <h2>
+
+                Petite question 😊
+
+            </h2>
+
+            <p>
+
+                À combien de pourcentage m'aimes-tu ?
+
+            </p>
+
+            <div class="loveBox">
+
+                <span id="emoji">
+
+                    😡
+
+                </span>
+
+                <h3 id="loveValue">
+
+                    0 %
+
+                </h3>
+
+                <input
+                    id="loveSlider"
+                    type="range"
+                    min="0"
+                    max="1000"
+                    value="0"
+                >
+
+                <p>
+
+                    Dépasse les limites...
+
+                    Jusqu'à l'infini ❤️
+
+                </p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Lettre 1 -->
+        <section class="page">
+
+            <h2>
+
+                Lettre n°1
+
+            </h2>
+
+            <div class="letter">
+
+                <p id="typing1"></p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Lettre 2 -->
+        <section class="page">
+
+            <h2>
+
+                Lettre n°2
+
+            </h2>
+
+            <div class="letter">
+
+                <p id="typing2"></p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Lettre 3 -->
+        <section class="page">
+
+            <h2>
+
+                Lettre n°3
+
+            </h2>
+
+            <div class="letter">
+
+                <p id="typing3"></p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Lettre 4 -->
+        <section class="page">
+
+            <h2>
+
+                Lettre n°4
+
+            </h2>
+
+            <div class="letter">
+
+                <p id="typing4"></p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Lettre 5 -->
+        <section class="page">
+
+            <h2>
+
+                Lettre n°5
+
+            </h2>
+
+            <div class="letter">
+
+                <p id="typing5"></p>
+
+            </div>
+
+            <button class="next">
+
+                Continuer ❤️
+
+            </button>
+
+        </section>
+
+        <!-- Fin -->
+        <section class="page finalPage">
+
+            <h1>
+
+                ❤️ Joyeux Anniversaire Myra ❤️
+
+            </h1>
+
+            <p>
+
+                Peu importe les jours qui passent...
+
+                Peu importe les obstacles...
+
+                Peu importe la distance...
+
+                Je serai toujours là pour toi.
+
+            </p>
+
+            <h2>
+
+                Je t'aime infiniment.
+
+            </h2>
+
+            <h3>
+
+                ❤️ Zodiac ❤️
+
+            </h3>
+
+            <button id="restart">
+
+                Revoir le cadeau 🎁
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
