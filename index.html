@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2b0750"
+    >
+
+    <title>
+        Une petite surprise ❤️
+    </title>
+
+
+    <!-- Polices -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         MUSIQUE MP4
+    =================================================== -->
+
+    <!--
+        IMPORTANT :
+        Remplace "musique.mp4" par le nom EXACT
+        de ton fichier MP4.
+
+        Le lecteur est invisible.
+        Le JavaScript lancera la musique après
+        un clic de l'utilisateur.
+    -->
+
+    <video
+        id="backgroundMusic"
+        class="hiddenMedia"
+        loop
+        playsinline
+        preload="auto"
+    >
+
+        <source
+            src="YTDown.com_YouTube_Ghost-Mary-On-A-Cross-Official-Lyric-Vid_Media_aBt2Djy37tQ_001_1080p.mp4"
+            type="video/mp4"
+        >
+
+        Ton navigateur ne peut pas lire ce fichier.
+
+    </video>
+
+
+    <!-- ==================================================
+         DÉCOR
+    =================================================== -->
+
+    <div id="stars"></div>
+
+    <div id="hearts"></div>
+
+    <div id="flowers"></div>
+
+
+    <!-- ==================================================
+         APPLICATION
+    =================================================== -->
+
+    <main id="app">
+
+
+        <!-- ==================================================
+             ACCUEIL
+        =================================================== -->
+
+        <section
+            id="welcome"
+            class="screen active"
+        >
+
+            <div class="card">
+
+                <div class="heartIcon">
+                    ❤️
+                </div>
+
+
+                <h1>
+                    Une petite surprise
+                </h1>
+
+
+                <p>
+                    J'ai préparé quelque chose
+                    de spécial pour toi ✨
+                </p>
+
+
+                <button
+                    id="startButton"
+                    type="button"
+                >
+
+                    Commencer la surprise ✨
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- La suite sera ajoutée ici --><!-- ==================================================
+             LETTRE 💌
+        =================================================== -->
+
+        <section
+            id="letterSection"
+            class="screen"
+        >
+
+            <div class="card">
+
+                <div class="sectionIcon">
+                    💌
+                </div>
+
+
+                <h2>
+                    Une petite lettre pour toi
+                </h2>
+
+
+                <p id="letterHint">
+                    Clique sur l'enveloppe pour l'ouvrir...
+                </p>
+
+
+                <button
+                    id="envelope"
+                    class="envelope"
+                    type="button"
+                    aria-label="Ouvrir la lettre"
+                >
+
+                    💌
+
+                </button>
+
+
+                <div
+                    id="letterContent"
+                    class="letterContent"
+                >
+
+                    <p>
+                        Joyeux anniversaire Myra ❤️
+                    </p>
+
+                    <p>
+                        Aujourd'hui est une journée spéciale,
+                        alors je voulais créer quelque chose
+                        rien que pour toi. ✨
+                    </p>
+
+                    <p>
+                        J'espère que cette petite surprise
+                        te fera sourire. 🌸
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="openLetterButton"
+                    type="button"
+                >
+
+                    Ouvrir la lettre 💌
+
+                </button>
+
+
+                <button
+                    id="nextToGift"
+                    class="nextButton"
+                    type="button"
+                    disabled
+                >
+
+                    Continuer 🎁
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CADEAU 🎁
+        =================================================== -->
+
+        <section
+            id="giftSection"
+            class="screen"
+        >
+
+            <div class="card">
+
+                <div class="sectionIcon">
+                    🎁
+                </div>
+
+
+                <h2>
+                    Une surprise t'attend...
+                </h2>
+
+
+                <p id="giftHint">
+                    Clique sur le cadeau pour découvrir
+                    ce qu'il cache ✨
+                </p>
+
+
+                <button
+                    id="giftButton"
+                    class="giftButton"
+                    type="button"
+                    aria-label="Ouvrir le cadeau"
+                >
+
+                    🎁
+
+                </button>
+
+
+                <div
+                    id="giftContent"
+                    class="giftContent"
+                >
+
+                    <div class="giftEmoji">
+                        💖
+                    </div>
+
+                    <h3>
+                        Une petite dose de bonheur
+                    </h3>
+
+                    <p>
+                        Parce qu'une journée spéciale
+                        mérite une surprise spéciale. 🌸
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="nextToLove"
+                    class="nextButton"
+                    type="button"
+                    disabled
+                >
+
+                    Continuer ❤️
+
+                </button>
+
+            </div>
+
+        </section><!-- ==================================================
+             JAUGE D'AMOUR ❤️
+        =================================================== -->
+
+        <section
+            id="loveSection"
+            class="screen"
+        >
+
+            <div class="card">
+
+                <div class="sectionIcon">
+                    ❤️
+                </div>
+
+
+                <h2>
+                    À quel point tu es aimée ?
+                </h2>
+
+
+                <p>
+                    Fais glisser la jauge pour découvrir
+                    le niveau d'amour. 💕
+                </p>
+
+
+                <div
+                    id="loveEmoji"
+                    class="loveEmoji"
+                >
+                    😐
+                </div>
+
+
+                <div
+                    id="loveValue"
+                    class="loveValue"
+                >
+                    0%
+                </div>
+
+
+                <div
+                    class="loveBar"
+                    aria-hidden="true"
+                >
+
+                    <div
+                        id="loveProgress"
+                        class="loveProgress"
+                    ></div>
+
+                </div>
+
+
+                <input
+                    id="loveSlider"
+                    class="loveSlider"
+                    type="range"
+                    min="0"
+                    max="2000"
+                    value="0"
+                    step="10"
+                    aria-label="Jauge d'amour"
+                >
+
+
+                <p
+                    id="loveMessage"
+                    class="loveMessage"
+                >
+                    Fais monter la jauge ❤️
+                </p>
+
+
+                <!--
+                    Le bouton est toujours présent.
+                    Il devient simplement utilisable
+                    lorsque la jauge atteint 2000 %.
+                -->
+
+                <button
+                    id="loveContinue"
+                    class="nextButton"
+                    type="button"
+                    disabled
+                >
+
+                    Continuer 💖
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             RÉSULTAT ❤️
+        =================================================== -->
+
+        <section
+            id="resultSection"
+            class="screen"
+        >
+
+            <div class="card">
+
+                <div class="sectionIcon">
+                    💖
+                </div>
+
+
+                <h2>
+                    Résultat officiel
+                </h2>
+
+
+                <div
+                    id="resultEmoji"
+                    class="resultEmoji"
+                >
+                    💖
+                </div>
+
+
+                <div
+                    id="resultValue"
+                    class="resultValue"
+                >
+                    2000%
+                </div>
+
+
+                <p class="resultText">
+                    Même 2000 % ne suffit pas
+                    pour mesurer toute la valeur
+                    d'une personne spéciale. ✨
+                </p>
+
+
+                <p class="resultText">
+                    Alors on continue la surprise... 🌸
+                </p>
+
+
+                <button
+                    id="nextToMemories"
+                    class="nextButton ready"
+                    type="button"
+                >
+
+                    Continuer vers les souvenirs 📸
+
+                </button>
+
+            </div>
+
+        </section><!-- ==================================================
+             SOUVENIRS 📸
+        =================================================== -->
+
+        <section
+            id="memoriesSection"
+            class="screen"
+        >
+
+            <div class="card">
+
+                <div class="sectionIcon">
+                    📸
+                </div>
+
+
+                <h2>
+                    Quelques souvenirs ✨
+                </h2>
+
+
+                <p>
+                    Parce que les petits moments
+                    peuvent devenir de beaux souvenirs.
+                </p>
+
+
+                <div class="memoriesGrid">
+
+
+                    <div class="memoryCard">
+
+                        <div class="memoryIcon">
+                            🌸
+                        </div>
+
+                        <p>
+                            Des moments remplis
+                            de sourires.
+                        </p>
+
+                    </div>
+
+
+                    <div class="memoryCard">
+
+                        <div class="memoryIcon">
+                            ✨
+                        </div>
+
+                        <p>
+                            Des souvenirs à garder
+                            précieusement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="memoryCard">
+
+                        <div class="memoryIcon">
+                            💕
+                        </div>
+
+                        <p>
+                            Des instants qui rendent
+                            une journée plus belle.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    id="nextToFinalMessage"
+                    class="nextButton ready"
+                    type="button"
+                >
+
+                    Continuer 💌
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             MESSAGE SPÉCIAL ❤️
+        =================================================== -->
+
+        <section
+            id="specialSection"
+            class="screen"
+        >
+
+            <div class="card specialCard">
+
+                <div class="sectionIcon">
+                    🌸
+                </div>
+
+
+                <h2>
+                    Une dernière petite chose...
+                </h2>
+
+
+                <div
+                    id="namesAnimation"
+                    class="namesAnimation"
+                >
+
+                    <span>
+                        Myra
+                    </span>
+
+
+                    <span class="nameHeart">
+                        ❤️
+                    </span>
+
+
+                    <span>
+                        Zodiac
+                    </span>
+
+                </div>
+
+
+                <p class="specialText">
+                    Certaines personnes rendent
+                    les moments ordinaires
+                    beaucoup plus précieux. ✨
+                </p>
+
+
+                <p class="specialText">
+                    Cette petite surprise est simplement
+                    une façon de te souhaiter
+                    plein de belles choses. 💖
+                </p>
+
+
+                <button
+                    id="nextToLetter"
+                    class="nextButton ready"
+                    type="button"
+                >
+
+                    Lire le dernier message 💌
+
+                </button>
+
+            </div>
+
+        </section><!-- ==================================================
+             DERNIER MESSAGE 💌
+        =================================================== -->
+
+        <section
+            id="finalMessageSection"
+            class="screen"
+        >
+
+            <div class="card finalCard">
+
+                <div class="sectionIcon">
+                    💌
+                </div>
+
+
+                <h2>
+                    Un dernier message pour toi
+                </h2>
+
+
+                <div class="finalLetter">
+
+                    <p>
+                        Myra,
+                    </p>
+
+
+                    <p>
+                        J'espère que cette petite surprise
+                        t'aura fait sourire et que tu auras
+                        passé un bon moment à la découvrir. ❤️
+                    </p>
+
+
+                    <p>
+                        Profite de cette journée,
+                        garde les beaux souvenirs,
+                        et surtout n'oublie jamais
+                        les petits moments qui comptent. ✨
+                    </p>
+
+
+                    <p>
+                        Je te souhaite énormément
+                        de bonheur, de réussite
+                        et de belles surprises
+                        pour la suite. 🌸
+                    </p>
+
+
+                    <div class="signature">
+
+                        <span>
+                            Avec beaucoup d'affection,
+                        </span>
+
+                        <strong>
+                            Zodiac ❤️
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="nextToEnd"
+                    class="nextButton ready"
+                    type="button"
+                >
+
+                    Dernière étape ✨
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             FIN ❤️
+        =================================================== -->
+
+        <section
+            id="endSection"
+            class="screen"
+        >
+
+            <div class="card endingCard">
+
+                <div
+                    id="endingIcon"
+                    class="endingIcon"
+                >
+                    💖
+                </div>
+
+
+                <h2>
+                    Surprise terminée !
+                </h2>
+
+
+                <div class="endingNames">
+
+                    Myra ❤️ Zodiac
+
+                </div>
+
+
+                <p>
+                    Merci d'avoir pris le temps
+                    de découvrir cette petite surprise.
+                </p>
+
+
+                <p>
+                    J'espère qu'elle t'aura fait sourire. 🌸
+                </p>
+
+
+                <button
+                    id="restartButton"
+                    type="button"
+                >
+
+                    Recommencer la surprise 🔄
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         CONTRÔLE MUSIQUE 🎵
+    =================================================== -->
+
+    <div
+        class="musicControl"
+        aria-label="Contrôle de la musique"
+    >
+
+        <button
+            id="musicButton"
+            type="button"
+        >
+
+            🔇 Musique
+
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         GSAP
+    =================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- ==================================================
+         SCRIPT PRINCIPAL
+    =================================================== -->
+
+    <script
+        src="script.js"
+    ></script>
+
+
+</body>
+
+</html>
