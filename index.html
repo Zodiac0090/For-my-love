@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>❤️ Joyeux Anniversaire Myra ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- Musique -->
+<audio id="music" loop>
+
+    <!-- Ajoute ton fichier audio ici -->
+    <source src="Mary_On_A_Cross_Slowed_Reverb_-_Mary_On_A_Cross_(SkySound7.com).mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- Décorations animées -->
+
+<div id="background"></div>
+
+<div id="stars"></div>
+
+<div id="hearts"></div>
+
+<div id="flowers"></div>
+
+<canvas id="fireworks"></canvas>
+
+
+
+
+<!-- Page d'accueil anniversaire -->
+
+<section id="welcome">
+
+
+    <div class="birthday-box">
+
+
+        <h1>
+            🎂 Joyeux Anniversaire 🎂
+        </h1>
+
+
+        <h2>
+            Myra 🌸
+        </h2>
+
+
+        <p>
+
+            Aujourd'hui est un jour spécial.
+
+            Ce n'est pas seulement ton anniversaire,
+            c'est la célébration de la personne incroyable
+            que tu es.
+
+            J'ai créé ce petit univers pour toi,
+            avec des fleurs, des étoiles,
+            des mots et beaucoup d'amour.
+
+        </p>
+
+
+        <button id="startButton">
+
+            Ouvrir mon cadeau ❤️
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- Livre interactif -->
+
+
+<main id="book" class="hidden">
+
+
+
+<!-- Introduction -->
+
+<section class="page active">
+
+
+<h2>
+    Pour toi Myra ❤️
+</h2>
+
+
+<div class="letter">
+
+<p id="introText">
+
+Ce site est un cadeau fait spécialement pour toi.
+
+Chaque animation représente une petite pensée,
+chaque fleur représente un souvenir,
+et chaque lettre représente une partie de ce que je ressens.
+
+Profite de chaque page.
+
+</p>
+
+</div>
+
+
+<button class="next">
+Continuer 🌸
+</button>
+
+
+</section>
+
+
+
+
+
+
+<!-- Jauge amour -->
+
+
+<section class="page">
+
+
+<h2>
+Une petite question 💕
+</h2>
+
+
+<div class="letter">
+
+
+<p>
+À combien de pourcentage m'aimes-tu ?
+</p>
+
+
+<div class="loveBox">
+
+
+<div id="emoji">
+
+😡
+
+</div>
+
+
+<h3 id="loveValue">
+
+0 %
+
+</h3>
+
+
+
+<input 
+type="range"
+id="loveSlider"
+min="0"
+max="1000"
+value="0"
+>
+
+
+
+<p>
+
+1000% n'est pas la fin...
+
+Il existe l'infini ❤️
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<button class="next">
+
+Continuer ❤️
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Lettres d'amour -->
+
+
+<section class="page">
+
+<h2>
+Lettre 1 💌
+</h2>
+
+
+<div class="letter">
+
+<p id="typing1"></p>
+
+</div>
+
+
+<button class="next">
+Continuer ❤️
+</button>
+
+
+</section>
+
+
+
+
+
+<section class="page">
+
+<h2>
+Lettre 2 💌
+</h2>
+
+
+<div class="letter">
+
+<p id="typing2"></p>
+
+</div>
+
+
+<button class="next">
+Continuer ❤️
+</button>
+
+
+</section>
+
+
+
+
+
+
+<section class="page">
+
+<h2>
+Lettre 3 💌
+</h2>
+
+
+<div class="letter">
+
+<p id="typing3"></p>
+
+</div>
+
+
+<button class="next">
+Continuer ❤️
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="page">
+
+<h2>
+Lettre 4 💌
+</h2>
+
+
+<div class="letter">
+
+<p id="typing4"></p>
+
+</div>
+
+
+<button class="next">
+Continuer ❤️
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="page">
+
+<h2>
+Lettre 5 💌
+</h2>
+
+
+<div class="letter">
+
+<p id="typing5"></p>
+
+</div>
+
+
+<button class="next">
+Continuer ❤️
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Dernière page -->
+
+
+<section class="page finalPage">
+
+
+<h1>
+
+❤️ Myra ❤️
+
+</h1>
+
+
+<h2>
+
+Joyeux anniversaire 🌸
+
+</h2>
+
+
+
+<div class="letter">
+
+
+<p>
+
+
+Merci d'être toi.
+
+Merci pour les sourires,
+les souvenirs,
+les moments partagés.
+
+
+Je veux que tu saches une chose :
+
+Je serai toujours là pour toi.
+
+Dans les bons moments,
+dans les moments difficiles,
+quand tu auras besoin de quelqu'un.
+
+
+Tu compteras toujours énormément pour moi.
+
+
+❤️ Zodiac ❤️
+
+
+</p>
+
+
+</div>
+
+
+
+<button id="restart">
+
+Revoir le cadeau 🎁
+
+</button>
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+          </html>
